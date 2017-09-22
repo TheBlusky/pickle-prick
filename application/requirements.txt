@@ -1,0 +1,6 @@
+aiohttp==2.2.5
+aiohttp_jinja2==0.14.0
+aiohttp_session==1.0.1
+aiohttp_session[secure]==1.0.1
+Jinja2==2.9.6
+cryptography==2.0.3

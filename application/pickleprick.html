@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pickle pRick - Adventures manager</title>
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+    <link rel="stylesheet" href="static/bootstrap-datepicker.min.css">
+    <script src="static/jquery-3.2.1.min.js"></script>
+    <script src="static/bootstrap.min.js"></script>
+    <script src="static/bootstrap-datepicker.min.js"></script>
+    <script>
+        $(function() {
+            $('#form-date').datepicker({
+              autoclose: true
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="header clearfix">
+        <nav>
+            <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link" href="https://dan.lousqui.fr">About</a>
+            </li>
+            </ul>
+        </nav>
+        <h3 class="text-muted">Pickle pRick - Adventures manager</h3>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+            <img src="static/gif.gif" height="auto" width="100%">
+        </div>
+        <div class="col-lg-3">
+            <h3>Add an adventures</h3>
+            <form action="/add" method="POST" id="form-form">
+                <input id="form-date" type="text" name="date" class="form-control">
+                <select id="form-universe" class="custom-select" name="dimension">
+                    <option value="">----- Dimension -----</option>
+                    <option>Blender Dimension</option>
+                    <option>Blumbus Dimension</option>
+                    <option>Buttworld</option>
+                    <option>Corn Universe</option>
+                    <option>Cromulon Dimension</option>
+                    <option>Cronenberg World</option>
+                    <option>Dimension 304-X</option>
+                    <option>Dimension 35-C</option>
+                    <option>Dimension 46</option>
+                    <option>Dimension 9-2184C</option>
+                    <option>Dimension C-132</option>
+                    <option>Dimension C-137</option>
+                    <option>Dimension C-500A</option>
+                    <option>Dog Dimension</option>
+                    <option>Doopidoo Dimension</option>
+                    <option>Froopyland</option>
+                    <option>Furniture Universe</option>
+                    <option>Glaagablaaga</option>
+                    <option>Greasy Grandma World</option>
+                    <option>Hamster in Butt World</option>
+                    <option>Pantless Universe</option>
+                    <option>Phone Universe</option>
+                    <option>Pizza Universe</option>
+                    <option>Post-Apocalyptic Dimension</option>
+                    <option>Replacement dimension</option>
+                    <option>Reverse Height Universe</option>
+                    <option>Testicle Monster Dimension</option>
+                </select>
+                <select id="form-planet" class="custom-select" name="planet">
+                    <option value="">----- Planet -----</option>
+                    <option>Alphabetrium</option>
+                    <option>Arboles Mentirosos</option>
+                    <option>Bird World</option>
+                    <option>Cronenberg World</option>
+                    <option>Delphi 6</option>
+                    <option>Dorian 5</option>
+                    <option>Dwarf Terrace-9</option>
+                    <option>Earth</option>
+                    <option>Fantasy World</option>
+                    <option>Flarbellon-7</option>
+                    <option>Gazorpazorp</option>
+                    <option>Gear World</option>
+                    <option>Glapflap</option>
+                    <option>Gromflom Prime</option>
+                    <option>Hideout Planet</option>
+                    <option>Nebraska</option>
+                    <option>On a Cob Planet</option>
+                    <option>Parblesnops</option>
+                    <option>Pawn Shop Planet</option>
+                    <option>Planet MWA739</option>
+                    <option>Planet Squanch</option>
+                    <option>Pluto</option>
+                    <option>Purge Planet</option>
+                    <option>Screaming Sun Earth</option>
+                    <option>Shongi</option>
+                    <option>Shongi the Living Planet</option>
+                    <option>Snorlab</option>
+                    <option>Terraneous system</option>
+                    <option>Unity's Planet</option>
+                    <option>Windshield Washing Planet</option>
+                </select>
+                <select id="form-morty" class="custom-select" name="morty">
+                    <option value="">----- Morty -----</option>
+                    <option>Morty C-137</option>
+                    <option>Replacement Morty</option>
+                    <option>Morty C-132</option>
+                    <option>Morty 304-X</option>
+                    <option>Morty 9-2184C</option>
+                    <option>Cronenberg Morty</option>
+                    <option>Evil Morty</option>
+                    <option>Genius Morty</option>
+                    <option>Alien Morty</option>
+                    <option>Antenna Morty</option>
+                    <option>Artist Morty</option>
+                    <option>Big Head Morty</option>
+                    <option>Cat Morty</option>
+                    <option>Cowboy Morty</option>
+                    <option>Cult Leader Morty</option>
+                    <option>Cyclops Morty</option>
+                    <option>Dipper and Mabel Mortys</option>
+                    <option>Eric Stoltz Mask Morty</option>
+                    <option>Fish Morty</option>
+                    <option>Hammerhead Morty</option>
+                    <option>"Lawyer" Morty</option>
+                    <option>Long Sleeved Morty</option>
+                    <option>Morty Rick</option>
+                    <option>Morty Smith</option>
+                    <option>Robot Morty</option>
+                    <option>The One True Morty</option>
+                    <option>Tortured Mortys</option>
+                </select><br />
+                <button type="button" class="btn btn-success" onClick="$('#form-form').submit()">Add</button>
+            </form>
+        </div>
+        <div class="col-lg-2">
+            <img src="static/gif.gif" height="auto" width="100%">
+        </div>
+        <div class="col-lg-3">
+            <h3>Export summary</h3>
+            <button type="button" class="btn btn-success" onClick="window.open('/export', '_blank')">Download</button><br /><br />
+            <h3>Import summary</h3>
+            <form id="form-import" action="/import" method="POST" enctype="multipart/form-data">
+                <label class="custom-file">
+                    <input type="file" id="file" name="file" class="custom-file-input">
+                    <span class="btn btn-success custom-file-control "></span>
+                </label><br />
+                <button type="button" class="btn btn-success"onClick="$('#form-import').submit()">Upload</button>
+            </form>
+        </div>
+        <div class="col-lg-2">
+            <img src="static/gif.gif" height="auto" width="100%">
+        </div>
+        <div class="col-lg-12">
+            {% for error in errors %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+            {% endfor %}
+            <h3>Adventures summary</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Dimension</th>
+                        <th>Planet</th>
+                        <th>Morty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for adventure in adventures %}
+                    <tr>
+                        <td>{{ adventure.date }}</td>
+                        <td>{{ adventure.dimension }}</td>
+                        <td>{{ adventure.planet }}</td>
+                        <td>{{ adventure.morty }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
