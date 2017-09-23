@@ -1,8 +1,10 @@
 # Pickle Prick
 
+A vulnerable web application to explain and illustrate deserialization of untrusted data with Pickle.
+
 **Warning ! Don't run this application on an Internet facing interface !!!**
 
-*Blog article currently in work ...*
+For more information, see [my blog article](https://dan.lousqui.fr/explaining-and-exploiting-deserialization-vulnerability-with-python-en.html)
 
 ## Goal
 
